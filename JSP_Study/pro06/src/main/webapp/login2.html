@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+function fn_validate() {
+var frmLogin = document.frmLogin; /* frmLogin이란 이름을 갖은 form태그 전체를 var frmLogin에 대입 */
+var user_id = frmLogin.user_id.value; //폼이름,요소,값
+var user_pw = frmLogin.user_pw.value;
+
+if((user_id.length == 0 || user_id == "") || (user_pw.length == 0 || user_pw == "")) {
+	alert("아이디와 비밀번호는 필수 입니다.");
+} else {
+	frmLogin.method = "post";
+	frmLogin.action = "login5"; //LoginServlet5 -> @WebServlet("/login5")
+	frmLogin.submit(); /*자바스크립트에서 서블릿으로 전송*/
+}
+}
+</script>
+</head>
+<body>
+<form name="frmLogin" method="post" action="login" encType="utf-8">
+아이디: <input type="text" name="user_id"><br>
+비밀번호: <input type="password" name="user_pw"><br>
+<input type="button" onClick="fn_validate()" value="로그인">
+<!-- 버튼 클릭시 fn_validate()함수 호출 -->
+<input type="reset" value="다시입력">
+<input type="hidden" name="user_address" value="서울 강동구"/>
+</form>
+</body>
+</html>

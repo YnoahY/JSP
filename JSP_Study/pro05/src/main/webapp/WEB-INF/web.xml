@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.Jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <!-- 오류시 xmlns="http://xmlns.jcp.org/xml/ns/javaee -> Jcp-->
+  <servlet>
+	    <servlet-name>ppp</servlet-name> <!-- 브라우저에서 요청하는 매핑 이름에 대해 실제 실행하는 서블릿 클래스 설정하는 태그 -->
+	    <servlet-class>sec01.ex01.LastServlet</servlet-class><!-- <servlet-mapping>-<servlet-name>: 값이 동일 -->
+		</servlet><!-- 브라우저에서 요청하는 매핑 이름에 대해 실제 기능수행 서블릿 클래스를 설정 -->
+		
+		<servlet-mapping> <!-- 브라우저에서 요청하는 논리적 서블릿 요청 -->
+			<servlet-name>ppp</servlet-name> <!-- 매핑이름이 같은 <servlet>태그 안 <servlet-name>과 연결 -->
+	    <url-pattern>/last</url-pattern> <!-- 브라우저에서 <servlet-class>값을 요청하는 논리적 서블릿 이름 -->
+		</servlet-mapping>
+</web-app>
